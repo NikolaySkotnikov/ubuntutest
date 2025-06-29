@@ -2,9 +2,9 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
 
-appp = FastAPI()
+app = FastAPI()
 
-@appp.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse)
 async def read_root():
     html_content = """
     <!DOCTYPE html>
@@ -59,4 +59,4 @@ async def read_root():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(appp, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
